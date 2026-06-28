@@ -12,8 +12,8 @@
      Update these values for your business
      ========================================== */
   const CONFIG = {
-    whatsappNumber: '919876543210',
-    email: 'studio@mahacaptures.com',
+    whatsappNumber: '91978777149',
+    email: 'framecodeteam@gmail.com',
     typingWords: ['Moments', 'Memories', 'Magic', 'Stories'],
     heroSlideInterval: 5000,
     testimonialInterval: 5000,
