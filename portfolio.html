@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio gallery - Wedding, Pre-Wedding, Fashion, Corporate photography by Maha Captures.">
+  <title>Portfolio | Maha Captures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="loader"><div class="loader-logo">Maha<span>Captures</span></div><div class="loader-bar"><div class="loader-progress"></div></div></div>
+  <div class="cursor-dot"></div><div class="cursor-outline"></div>
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Maha Captures"></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-book-btn" data-open-booking>Book Now</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="#" class="nav-book-btn" data-open-booking>Book Now</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2cae?w=1920&q=80" alt="Portfolio"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1>Portfolio</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Portfolio</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Our Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Browse our curated collection of photography across weddings, portraits, fashion, and more.</p>
+      </div>
+
+      <div class="portfolio-filters reveal fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="pre-wedding">Pre Wedding</button>
+        <button class="filter-btn" data-filter="couples">Couples</button>
+        <button class="filter-btn" data-filter="kids">Kids</button>
+        <button class="filter-btn" data-filter="birthday">Birthday</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="wedding" data-title="Royal Wedding Ceremony">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Royal Wedding</h4><span>Wedding</span></div>
+        </div>
+        <div class="portfolio-item" data-category="pre-wedding" data-title="Beach Pre-Wedding">
+          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2cae?w=600&q=80" alt="Pre Wedding" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Beach Pre-Wedding</h4><span>Pre Wedding</span></div>
+        </div>
+        <div class="portfolio-item" data-category="couples" data-title="Love in Paris">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80" alt="Couples" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Love in Paris</h4><span>Couples</span></div>
+        </div>
+        <div class="portfolio-item" data-category="wedding" data-title="Traditional Ceremony">
+          <img src="https://images.unsplash.com/photo-1465495976277-812e8f969945?w=600&q=80" alt="Wedding" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Traditional Ceremony</h4><span>Wedding</span></div>
+        </div>
+        <div class="portfolio-item" data-category="kids" data-title="Playful Childhood">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80" alt="Kids" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Playful Childhood</h4><span>Kids</span></div>
+        </div>
+        <div class="portfolio-item" data-category="birthday" data-title="Sweet Sixteen">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Sweet Sixteen</h4><span>Birthday</span></div>
+        </div>
+        <div class="portfolio-item" data-category="corporate" data-title="Annual Conference">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="Corporate" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Annual Conference</h4><span>Corporate</span></div>
+        </div>
+        <div class="portfolio-item" data-category="fashion" data-title="Vogue Editorial">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80" alt="Fashion" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Vogue Editorial</h4><span>Fashion</span></div>
+        </div>
+        <div class="portfolio-item" data-category="nature" data-title="Golden Hour">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Nature" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Golden Hour</h4><span>Nature</span></div>
+        </div>
+        <div class="portfolio-item" data-category="travel" data-title="Wanderlust">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Wanderlust</h4><span>Travel</span></div>
+        </div>
+        <div class="portfolio-item" data-category="pre-wedding" data-title="Mountain Romance">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd4a70?w=600&q=80" alt="Pre Wedding" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Mountain Romance</h4><span>Pre Wedding</span></div>
+        </div>
+        <div class="portfolio-item" data-category="kids" data-title="Newborn Bliss">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e6ddd993?w=600&q=80" alt="Baby" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Newborn Bliss</h4><span>Kids</span></div>
+        </div>
+        <div class="portfolio-item" data-category="wedding" data-title="Garden Reception">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Wedding" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Garden Reception</h4><span>Wedding</span></div>
+        </div>
+        <div class="portfolio-item" data-category="couples" data-title="Sunset Embrace">
+          <img src="https://images.unsplash.com/photo-1528892952291-009f62359c79?w=600&q=80" alt="Couples" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Sunset Embrace</h4><span>Couples</span></div>
+        </div>
+        <div class="portfolio-item" data-category="fashion" data-title="Runway Collection">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Fashion" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Runway Collection</h4><span>Fashion</span></div>
+        </div>
+        <div class="portfolio-item" data-category="corporate" data-title="Team Portraits">
+          <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80" alt="Corporate" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Team Portraits</h4><span>Corporate</span></div>
+        </div>
+        <div class="portfolio-item" data-category="travel" data-title="Coastal Escape">
+          <img src="https://images.unsplash.com/photo-1506929562879-bb697707ef0e?w=600&q=80" alt="Travel" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Coastal Escape</h4><span>Travel</span></div>
+        </div>
+        <div class="portfolio-item" data-category="nature" data-title="Forest Light">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Nature" loading="lazy">
+          <div class="portfolio-item-overlay"><i class="fas fa-search-plus"></i><h4>Forest Light</h4><span>Nature</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-content"><img src="" alt=""><p class="lightbox-caption"></p></div>
+    <button class="lightbox-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><span class="nav-logo-text">Maha<span>Captures</span></span></a>
+          <p>Premium photography studio capturing life's most precious moments.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" class="social-link" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4 class="footer-title">Services</h4><ul class="footer-links"><li><a href="services.html">Wedding</a></li><li><a href="services.html">Pre Wedding</a></li><li><a href="services.html">Fashion</a></li></ul></div>
+        <div><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="tel:+919876543210">+91 98765 43210</a></li><li><a href="mailto:studio@mahacaptures.com">studio@mahacaptures.com</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Maha Captures. All Rights Reserved.</p></div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+      <h3>Book Your Session</h3>
+      <form class="booking-form-element">
+        <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email"></div>
+        <div class="form-group"><label>Event Type</label><select name="event_type"><option value="">Select</option><option value="Wedding">Wedding</option><option value="Pre Wedding">Pre Wedding</option></select></div>
+        <div class="form-group"><label>Event Date</label><input type="date" name="event_date"></div>
+        <div class="form-group"><label>Location</label><input type="text" name="location"></div>
+        <div class="form-group"><label>Message</label><textarea name="message"></textarea></div>
+        <button type="submit" class="btn btn-primary form-submit"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <a href="#" class="float-btn float-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" class="float-btn float-email"><i class="fas fa-envelope"></i></a>
+  <button class="float-btn back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>

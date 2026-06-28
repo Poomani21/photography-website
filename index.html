@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maha Captures - Premium luxury photography studio specializing in weddings, portraits, corporate events, and cinematic visual storytelling.">
+  <meta name="keywords" content="photography, wedding photographer, portrait, luxury photography, cinematic, Maha Captures">
+  <meta name="author" content="Maha Captures">
+  <meta property="og:title" content="Maha Captures | Premium Photography Studio">
+  <meta property="og:description" content="Capturing life's most precious moments with elegance, artistry, and cinematic beauty.">
+  <meta property="og:type" content="website">
+  <title>Maha Captures | Premium Photography Studio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader-logo">Maha<span>Captures</span></div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.svg" alt="Maha Captures Logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-book-btn" data-open-booking>Book Now</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="#" class="nav-book-btn" data-open-booking>Book Now</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-slider">
+      <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80" alt="Wedding photography">
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2cae?w=1920&q=80" alt="Couple portrait">
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1465495976277-812e8f969945?w=1920&q=80" alt="Cinematic wedding">
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1920&q=80" alt="Fashion shoot">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Premium Photography Studio</p>
+      <h1 class="hero-title">Capturing Your <span class="typing-text">Moments</span></h1>
+      <p class="hero-desc">We transform life's most precious moments into timeless works of art. Experience luxury photography with cinematic elegance.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary" data-open-booking>Book Now</a>
+        <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+    <div class="hero-dots">
+      <button class="hero-dot active" aria-label="Slide 1"></button>
+      <button class="hero-dot" aria-label="Slide 2"></button>
+      <button class="hero-dot" aria-label="Slide 3"></button>
+      <button class="hero-dot" aria-label="Slide 4"></button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Who We Are</span>
+        <h2 class="section-title">About Our Studio</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">A passion-driven photography studio dedicated to creating visual masterpieces that tell your unique story.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image reveal slide-left">
+          <img src="https://images.unsplash.com/photo-1554048612-b6a482b86f74?w=800&q=80" alt="Professional photographer at work" loading="lazy">
+          <div class="about-image-frame"></div>
+        </div>
+        <div class="about-content reveal slide-right">
+          <h3>Crafting Visual Stories Since 2014</h3>
+          <p>Welcome to Maha Captures — where every frame tells a story of love, joy, and timeless beauty. Founded by award-winning photographer Maha, our studio has become synonymous with luxury, elegance, and artistic excellence.</p>
+          <p>With over a decade of experience capturing weddings, portraits, and corporate events across the globe, we bring a cinematic eye and meticulous attention to detail to every project we undertake.</p>
+          <div class="about-mission-vision">
+            <div class="mv-item">
+              <h4>Our Mission</h4>
+              <p>To capture authentic emotions and create breathtaking imagery that preserves your most cherished memories for generations.</p>
+            </div>
+            <div class="mv-item">
+              <h4>Our Vision</h4>
+              <p>To be the most trusted premium photography studio, setting new standards in luxury visual storytelling worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-item reveal fade-up">
+          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item reveal fade-up">
+          <div class="stat-number" data-target="250" data-suffix="+">0</div>
+          <div class="stat-label">Events</div>
+        </div>
+        <div class="stat-item reveal fade-up">
+          <div class="stat-number" data-target="10" data-suffix="+">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item reveal fade-up">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">What We Offer</span>
+        <h2 class="section-title">Our Services</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">From intimate portraits to grand celebrations, we offer comprehensive photography services tailored to your vision.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding Photography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-heart"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Wedding Photography</h3>
+            <p>Capture the magic of your special day with our cinematic wedding photography that preserves every emotion and detail.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80" alt="Pre Wedding" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-ring"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Pre Wedding</h3>
+            <p>Romantic pre-wedding shoots at stunning locations that tell the beautiful story of your love journey together.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday Photography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-birthday-cake"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Birthday Photography</h3>
+            <p>Celebrate life's milestones with vibrant, joyful birthday photography that captures the essence of your celebration.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e6ddd993?w=600&q=80" alt="Baby Shoot" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-baby"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Baby Shoot</h3>
+            <p>Adorable newborn and baby photography sessions that preserve the innocence and wonder of early childhood.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Maternity Shoot" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-female"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Maternity Shoot</h3>
+            <p>Elegant maternity portraits celebrating the beauty of motherhood with artistic, timeless compositions.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="Corporate Photography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-building"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Corporate Photography</h3>
+            <p>Professional corporate headshots, event coverage, and brand photography that elevates your business image.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Product Photography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-box"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Product Photography</h3>
+            <p>Stunning product photography that showcases your brand with crisp, compelling visuals for e-commerce and marketing.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80" alt="Fashion Shoot" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-tshirt"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Fashion Shoot</h3>
+            <p>High-fashion editorial photography with creative direction, styling, and dramatic lighting for magazine-quality results.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=80" alt="Drone Photography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-helicopter"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Drone Photography</h3>
+            <p>Breathtaking aerial photography and videography that captures stunning perspectives from above.</p>
+          </div>
+        </div>
+        <div class="service-card reveal fade-up">
+          <div class="service-card-image">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80" alt="Videography" loading="lazy">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-icon"><i class="fas fa-video"></i></div>
+          </div>
+          <div class="service-card-content">
+            <h3>Videography</h3>
+            <p>Cinematic wedding films and event videos that bring your memories to life with professional editing and storytelling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-40 reveal fade-up">
+        <a href="services.html" class="btn btn-primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax CTA -->
+  <section class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1606216794074-735e91aa2cae?w=1920&q=80');">
+    <div class="parallax-overlay"></div>
+    <div class="container parallax-content reveal zoom-in">
+      <h2>Every Moment Deserves to Be Remembered</h2>
+      <p>Let us create stunning visual memories that you'll treasure forever. Your story deserves to be told beautifully.</p>
+      <a href="#" class="btn btn-primary" data-open-booking>Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Our Work</span>
+        <h2 class="section-title">Portfolio</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Explore our curated collection of stunning photography across various categories and styles.</p>
+      </div>
+      <div class="portfolio-filters reveal fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="pre-wedding">Pre Wedding</button>
+        <button class="filter-btn" data-filter="couples">Couples</button>
+        <button class="filter-btn" data-filter="kids">Kids</button>
+        <button class="filter-btn" data-filter="birthday">Birthday</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="wedding" data-title="Elegant Wedding Ceremony">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Elegant Wedding</h4>
+            <span>Wedding</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="pre-wedding" data-title="Romantic Pre-Wedding">
+          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2cae?w=600&q=80" alt="Pre Wedding" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Romantic Pre-Wedding</h4>
+            <span>Pre Wedding</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="couples" data-title="Love Story">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80" alt="Couples" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Love Story</h4>
+            <span>Couples</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="kids" data-title="Joyful Kids">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80" alt="Kids" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Joyful Kids</h4>
+            <span>Kids</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="birthday" data-title="Birthday Celebration">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Birthday Celebration</h4>
+            <span>Birthday</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="corporate" data-title="Corporate Event">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="Corporate" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Corporate Event</h4>
+            <span>Corporate</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="fashion" data-title="Fashion Editorial">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80" alt="Fashion" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Fashion Editorial</h4>
+            <span>Fashion</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="nature" data-title="Natural Beauty">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Nature" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Natural Beauty</h4>
+            <span>Nature</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="travel" data-title="Travel Adventure">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Travel Adventure</h4>
+            <span>Travel</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="wedding" data-title="Grand Reception">
+          <img src="https://images.unsplash.com/photo-1465495976277-812e8f969945?w=600&q=80" alt="Wedding Reception" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Grand Reception</h4>
+            <span>Wedding</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="couples" data-title="Sunset Romance">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd4a70?w=600&q=80" alt="Couples Sunset" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Sunset Romance</h4>
+            <span>Couples</span>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="kids" data-title="Playful Moments">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e6ddd993?w=600&q=80" alt="Baby" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <i class="fas fa-search-plus"></i>
+            <h4>Playful Moments</h4>
+            <span>Kids</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-40 reveal fade-up">
+        <a href="portfolio.html" class="btn btn-outline">View Full Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="pricing" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Investment</span>
+        <h2 class="section-title">Pricing Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Choose the perfect package for your special occasion. All plans include professional editing and high-resolution delivery.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal fade-up">
+          <h3 class="pricing-name">Basic</h3>
+          <div class="pricing-price">₹25,000<span>/event</span></div>
+          <p class="pricing-desc">Perfect for intimate gatherings and small events</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 4 Hours Coverage</li>
+            <li><i class="fas fa-check"></i> 1 Professional Photographer</li>
+            <li><i class="fas fa-check"></i> 200 Edited Photos</li>
+            <li><i class="fas fa-check"></i> Online Gallery</li>
+            <li><i class="fas fa-check"></i> Basic Retouching</li>
+          </ul>
+          <a href="#" class="btn btn-outline" data-open-booking>Book Now</a>
+        </div>
+        <div class="pricing-card featured reveal fade-up">
+          <div class="pricing-badge">Popular</div>
+          <h3 class="pricing-name">Standard</h3>
+          <div class="pricing-price">₹50,000<span>/event</span></div>
+          <p class="pricing-desc">Our most popular package for weddings and events</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> 8 Hours Coverage</li>
+            <li><i class="fas fa-check"></i> 2 Professional Photographers</li>
+            <li><i class="fas fa-check"></i> 500 Edited Photos</li>
+            <li><i class="fas fa-check"></i> Premium Online Gallery</li>
+            <li><i class="fas fa-check"></i> Advanced Retouching</li>
+            <li><i class="fas fa-check"></i> Pre-Event Consultation</li>
+            <li><i class="fas fa-check"></i> Same Day Highlights</li>
+          </ul>
+          <a href="#" class="btn btn-primary" data-open-booking>Book Now</a>
+        </div>
+        <div class="pricing-card reveal fade-up">
+          <h3 class="pricing-name">Premium</h3>
+          <div class="pricing-price">₹1,00,000<span>/event</span></div>
+          <p class="pricing-desc">The ultimate luxury photography experience</p>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Full Day Coverage</li>
+            <li><i class="fas fa-check"></i> 3 Professional Photographers</li>
+            <li><i class="fas fa-check"></i> Unlimited Edited Photos</li>
+            <li><i class="fas fa-check"></i> Luxury Album (30 Pages)</li>
+            <li><i class="fas fa-check"></i> Cinematic Highlight Film</li>
+            <li><i class="fas fa-check"></i> Drone Photography</li>
+            <li><i class="fas fa-check"></i> Premium Retouching</li>
+            <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
+          </ul>
+          <a href="#" class="btn btn-outline" data-open-booking>Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Client Love</span>
+        <h2 class="section-title">Testimonials</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Hear what our wonderful clients have to say about their experience with Maha Captures.</p>
+      </div>
+      <div class="testimonials-slider reveal fade-up">
+        <div class="testimonial-track">
+          <div class="testimonial-slide">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&q=80" alt="Priya Sharma" class="testimonial-avatar" loading="lazy">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"Maha Captures made our wedding day absolutely magical. Every photo is a work of art. The team was professional, creative, and captured emotions we didn't even know existed. Highly recommended!"</p>
+            <p class="testimonial-author">Priya Sharma</p>
+            <p class="testimonial-role">Wedding Client</p>
+          </div>
+          <div class="testimonial-slide">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&q=80" alt="Rahul Mehta" class="testimonial-avatar" loading="lazy">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"The pre-wedding shoot was an incredible experience. The locations, the lighting, the poses — everything was perfect. Our photos look like they're straight out of a Bollywood movie!"</p>
+            <p class="testimonial-author">Rahul Mehta</p>
+            <p class="testimonial-role">Pre-Wedding Client</p>
+          </div>
+          <div class="testimonial-slide">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&q=80" alt="Ananya Reddy" class="testimonial-avatar" loading="lazy">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"We hired Maha Captures for our corporate event and the results exceeded all expectations. Professional, punctual, and the photos were delivered ahead of schedule. Will definitely work with them again."</p>
+            <p class="testimonial-author">Ananya Reddy</p>
+            <p class="testimonial-role">Corporate Client</p>
+          </div>
+          <div class="testimonial-slide">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&q=80" alt="Vikram Singh" class="testimonial-avatar" loading="lazy">
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">"The baby shoot for our little one was so heartwarming. Maha has a gift for making babies comfortable and capturing their purest expressions. These photos are treasures we'll keep forever."</p>
+            <p class="testimonial-author">Vikram Singh</p>
+            <p class="testimonial-role">Baby Shoot Client</p>
+          </div>
+        </div>
+        <div class="testimonial-dots">
+          <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="faq-list reveal fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            How far in advance should I book?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We recommend booking at least 3-6 months in advance for weddings and major events. For portrait sessions and smaller events, 2-4 weeks notice is usually sufficient. Popular dates fill up quickly, so early booking is encouraged.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is included in your packages?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>All packages include professional photography coverage, expert editing, and high-resolution digital delivery via our online gallery. Premium packages also include physical albums, cinematic highlight films, and additional services like drone photography.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you travel for destination events?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! We love destination weddings and events. Travel expenses are calculated separately based on location. We've covered events across India and internationally. Contact us for a custom quote for your destination event.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long until we receive our photos?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Preview highlights are delivered within 48-72 hours. The complete edited gallery is typically ready within 3-4 weeks for standard packages and 4-6 weeks for premium packages with albums and films.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can we customize a package?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We understand every event is unique. We're happy to create a custom package tailored to your specific needs, budget, and vision. Reach out to us for a personalized consultation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment methods do you accept?
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We accept bank transfers, UPI, credit/debit cards, and cash payments. A 30% advance is required to confirm your booking, with the remaining balance due before or on the event day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="section booking-section" id="booking">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Book Your Session</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="booking-grid">
+        <div class="booking-info reveal slide-left">
+          <h3>Let's Create Something Beautiful Together</h3>
+          <p>Ready to capture your special moments? Fill out the form and we'll connect with you via WhatsApp to discuss your vision and availability.</p>
+          <div class="booking-contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="booking-contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>studio@mahacaptures.com</p>
+            </div>
+          </div>
+          <div class="booking-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Studio</strong>
+              <p>123 Creative Lane, Photography District, Mumbai 400001</p>
+            </div>
+          </div>
+        </div>
+        <form class="booking-form booking-form-element reveal slide-right">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="event_type">Event Type</label>
+              <select id="event_type" name="event_type">
+                <option value="">Select Event Type</option>
+                <option value="Wedding">Wedding Photography</option>
+                <option value="Pre Wedding">Pre Wedding</option>
+                <option value="Birthday">Birthday Photography</option>
+                <option value="Baby Shoot">Baby Shoot</option>
+                <option value="Maternity">Maternity Shoot</option>
+                <option value="Corporate">Corporate Photography</option>
+                <option value="Product">Product Photography</option>
+                <option value="Fashion">Fashion Shoot</option>
+                <option value="Drone">Drone Photography</option>
+                <option value="Videography">Videography</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="event_date">Event Date</label>
+              <input type="date" id="event_date" name="event_date">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Event location / venue">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your event and any special requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="nav-logo-text">Maha<span>Captures</span></span>
+          </a>
+          <p>Premium photography studio capturing life's most precious moments with elegance, artistry, and cinematic beauty. Your story deserves to be told beautifully.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Wedding Photography</a></li>
+            <li><a href="services.html">Pre Wedding</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Fashion Shoot</a></li>
+            <li><a href="services.html">Drone Photography</a></li>
+            <li><a href="services.html">Videography</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Info</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="mailto:studio@mahacaptures.com">studio@mahacaptures.com</a></li>
+            <li>123 Creative Lane</li>
+            <li>Mumbai, India 400001</li>
+            <li>Mon - Sat: 9AM - 7PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Maha Captures. All Rights Reserved.</p>
+        <p>Crafted with passion for visual storytelling</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="Gallery image">
+      <p class="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <h3>Book Your Session</h3>
+      <form class="booking-form-element">
+        <div class="form-group">
+          <label for="modal_name">Full Name *</label>
+          <input type="text" id="modal_name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="modal_phone">Phone Number *</label>
+          <input type="tel" id="modal_phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+        <div class="form-group">
+          <label for="modal_email">Email Address</label>
+          <input type="email" id="modal_email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="modal_event_type">Event Type</label>
+          <select id="modal_event_type" name="event_type">
+            <option value="">Select Event Type</option>
+            <option value="Wedding">Wedding Photography</option>
+            <option value="Pre Wedding">Pre Wedding</option>
+            <option value="Birthday">Birthday Photography</option>
+            <option value="Baby Shoot">Baby Shoot</option>
+            <option value="Maternity">Maternity Shoot</option>
+            <option value="Corporate">Corporate Photography</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="modal_event_date">Event Date</label>
+          <input type="date" id="modal_event_date" name="event_date">
+        </div>
+        <div class="form-group">
+          <label for="modal_location">Location</label>
+          <input type="text" id="modal_location" name="location" placeholder="Event location">
+        </div>
+        <div class="form-group">
+          <label for="modal_message">Message</label>
+          <textarea id="modal_message" name="message" placeholder="Tell us about your event..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          <i class="fab fa-whatsapp"></i> Send via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Buttons -->
+  <a href="#" class="float-btn float-whatsapp" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" class="float-btn float-email" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
+  <button class="float-btn back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
