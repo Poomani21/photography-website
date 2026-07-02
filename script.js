@@ -67,11 +67,11 @@
       item.setAttribute('data-title', label);
       item.setAttribute('data-category', cat);
       item.innerHTML =
-        '<img data-src="https://picsum.photos/seed/maha' + i + '/600/600" src="https://picsum.photos/seed/maha' + i + '/600/600" alt="' + label + ' - ' + cat + '" loading="lazy">' +
-        '<div class="gallery-item-overlay">' +
-        '<div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>' +
-        '<span class="gallery-item-label">' + cat + '</span>' +
-        '</div>';
+      '<img src="https://picsum.photos/600/600?random=' + i + '" alt="' + label + ' - ' + cat + '" loading="lazy">' +
+      '<div class="gallery-item-overlay">' +
+      '<div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>' +
+      '<span class="gallery-item-label">' + cat + '</span>' +
+      '</div>';
       grid.appendChild(item);
     }
 
