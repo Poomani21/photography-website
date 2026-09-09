@@ -12,7 +12,7 @@
      Update these values for your business
      ========================================== */
   const CONFIG = {
-    whatsappNumber: '91978777149',
+    whatsappNumber: '919578777149',
     email: 'framecodeteam@gmail.com',
     typingWords: ['Moments', 'Memories', 'Magic', 'Stories'],
     heroSlideInterval: 5000,
