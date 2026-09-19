@@ -1,5 +1,5 @@
 /**
- * Maha Captures - Premium Photography Portfolio
+ * RJ Photography - Photography Portfolio
  * Main JavaScript File
  * Pure Vanilla JS - No Frameworks
  */
@@ -12,8 +12,8 @@
      Update these values for your business
      ========================================== */
   const CONFIG = {
-    whatsappNumber: '919578777149',
-    email: 'framecodeteam@gmail.com',
+    whatsappNumber: '919940281156',
+    email: 'info@rjevents.org',
     typingWords: ['Moments', 'Memories', 'Magic', 'Stories'],
     heroSlideInterval: 5000,
     testimonialInterval: 5000,
@@ -56,10 +56,11 @@
     const grid = document.getElementById('gallery-grid');
     if (!grid) return;
 
-    const categories = ['Wedding', 'Pre Wedding', 'Portrait', 'Fashion', 'Nature', 'Travel', 'Kids', 'Corporate', 'Birthday', 'Couples'];
-    const labels = ['Elegant Moment', 'Golden Light', 'Pure Joy', 'Timeless Beauty', 'Natural Grace', 'Urban Style', 'Tender Love', 'Dreamy Scene', 'Soft Glow', 'Classic Portrait', 'Modern Edge', 'Candid Smile', 'Forever Yours', 'Serene View', 'Bold Expression', 'Sweet Memory', 'Radiant Day', 'Quiet Moment'];
+    const categories = ['Wedding', 'Engagement', 'Pre-Wedding', 'Candid', 'Cinematic'];
+    const labels = ['Wedding Moment', 'Engagement Celebration', 'Pre-Wedding Story', 'Candid Moment', 'Cinematic Memory'];
+    const galleryImages = ['home1.webp', 'home2.webp', 'home3.webp', 'about.webp', 'cini.webp', 'eng.webp', 'pre.webp', 'can.webp', 'vid.webp', 'alb.webp', 'why.webp', 'pro1.webp', 'enge.webp', 'pro2.webp', 'pro3.webp', 'pro4.webp', 'pro5.webp', 'free.webp'];
 
-    for (let i = 1; i <= 54; i++) {
+    for (let i = 0; i < galleryImages.length; i++) {
       const cat = categories[i % categories.length];
       const label = labels[i % labels.length];
       const item = document.createElement('div');
@@ -67,7 +68,7 @@
       item.setAttribute('data-title', label);
       item.setAttribute('data-category', cat);
       item.innerHTML =
-      '<img src="https://picsum.photos/600/600?random=' + i + '" alt="' + label + ' - ' + cat + '" loading="lazy">' +
+      '<img src="images/rj/' + galleryImages[i] + '" alt="RJ Photography ' + label + ' - ' + cat + '" loading="lazy">' +
       '<div class="gallery-item-overlay">' +
       '<div class="gallery-item-zoom"><i class="fas fa-search-plus"></i></div>' +
       '<span class="gallery-item-label">' + cat + '</span>' +
