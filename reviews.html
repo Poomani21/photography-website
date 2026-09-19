@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read and share customer reviews for RJ Photography in Coimbatore.">
+  <title>Reviews | RJ Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader"><div class="loader-logo">RJ<span>Photography</span></div><div class="loader-bar"><div class="loader-progress"></div></div></div>
+  <div class="cursor-dot"></div><div class="cursor-outline"></div><div class="scroll-progress"></div>
+
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="images/rj/rj-photography-premium-logo.png" alt="RJ Photography logo"></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+        <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="#write-review" class="nav-book-btn">Write a Review</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="pricing.html" class="nav-link">Pricing</a>
+    <a href="reviews.html" class="nav-link active">Reviews</a>
+    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="#write-review" class="nav-book-btn">Write a Review</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"><img src="images/rj/home1.webp" alt="RJ Photography reviews"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1>Reviews</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Reviews</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Client Love</span>
+        <h2 class="section-title">Reviews</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Words from clients who trusted RJ Photography with their celebrations and stories.</p>
+      </div>
+      <div class="reviews-filters reveal fade-up" data-review-filters>
+        <div class="reviews-filter-search">
+          <label for="review-search">Search Reviews</label>
+          <div class="reviews-search-input"><i class="fas fa-search" aria-hidden="true"></i><input type="search" id="review-search" data-review-search placeholder="Search name, event, place or review"></div>
+        </div>
+        <div class="reviews-filter-field">
+          <label for="review-date-filter">Date</label>
+          <select id="review-date-filter" data-review-date-filter>
+            <option value="all">All Reviews</option>
+            <option value="recent">Recent</option>
+            <option value="1-month">Last 1 Month</option>
+            <option value="6-months">Last 6 Months</option>
+            <option value="1-year">Last 1 Year</option>
+          </select>
+        </div>
+        <div class="reviews-filter-field">
+          <label for="review-rating-filter">Rating</label>
+          <select id="review-rating-filter" data-review-rating-filter>
+            <option value="all">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+        </div>
+        <button type="button" class="reviews-clear" data-clear-review-filters>Clear Filters</button>
+      </div>
+      <div class="reviews-list reveal fade-up" data-reviews-list aria-live="polite">
+        <p class="reviews-state">Loading reviews...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="write-review" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal fade-up">
+        <span class="section-subtitle">Share Your Experience</span>
+        <h2 class="section-title">Write a Review</h2>
+        <div class="section-divider"></div>
+      </div>
+      <form class="booking-form review-form reveal fade-up" data-review-form novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="review-name">Name *</label>
+            <input type="text" id="review-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="review-function">Function Name / Event Type *</label>
+            <select id="review-function" name="functionName" required>
+              <option value="">Select event type</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Engagement">Engagement</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Baby Shower">Baby Shower</option>
+              <option value="Corporate Event">Corporate Event</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="review-place">Place / Location *</label>
+          <input type="text" id="review-place" name="place" placeholder="e.g. Coimbatore" required>
+        </div>
+        <div class="form-group">
+          <label>Rating *</label>
+          <input type="hidden" name="rating" value="">
+          <div class="review-star-picker" role="group" aria-label="Select a rating from 1 to 5 stars">
+            <button type="button" data-rating-star="1" aria-label="1 star" aria-pressed="false">★</button>
+            <button type="button" data-rating-star="2" aria-label="2 stars" aria-pressed="false">★</button>
+            <button type="button" data-rating-star="3" aria-label="3 stars" aria-pressed="false">★</button>
+            <button type="button" data-rating-star="4" aria-label="4 stars" aria-pressed="false">★</button>
+            <button type="button" data-rating-star="5" aria-label="5 stars" aria-pressed="false">★</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="review-feedback">Review / Feedback *</label>
+          <textarea id="review-feedback" name="review" placeholder="Tell us about your experience with RJ Photography..." required></textarea>
+        </div>
+        <p class="review-status" data-review-status role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary form-submit"><i class="fas fa-paper-plane"></i> Submit Review</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><span class="nav-logo-text">RJ<span>Photography</span></span></a>
+          <p>Creative photography and cinematic videography for celebrations, people and commercial projects in Coimbatore.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/p/Rj-photography-100070333121621/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/918056621821" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4 class="footer-title">Services</h4><ul class="footer-links"><li><a href="services.html">Wedding Photography</a></li><li><a href="services.html">Portrait &amp; Baby Photography</a></li><li><a href="services.html">Commercial Photography</a></li><li><a href="services.html">Event Videography</a></li></ul></div>
+        <div><h4 class="footer-title">Contact</h4><ul class="footer-links"><li><a href="tel:+918056621821">080566 21821</a></li><li><a href="mailto:rjphotographyvideo@gmail.com">rjphotographyvideo@gmail.com</a></li><li>130/40, Maruthamalai Main Road, Vadavalli, Coimbatore, India</li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 RJ Photography. All Rights Reserved.</p><p>Crafted with passion for visual storytelling</p></div>
+    </div>
+  </footer>
+
+  <a href="#" class="float-btn float-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" class="float-btn float-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  <button class="float-btn back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="script.js"></script>
+  <script type="module" src="reviews.js"></script>
+</body>
+</html>

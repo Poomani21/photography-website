@@ -496,9 +496,14 @@
      ========================================== */
   function initTestimonialsSlider() {
     const track = document.querySelector('.testimonial-track');
-    const dots = document.querySelectorAll('.testimonial-dot');
     if (!track) return;
 
+    if (track._testimonialAutoInterval) {
+      clearInterval(track._testimonialAutoInterval);
+    }
+
+    const previousButton = document.querySelector('.testimonial-prev');
+    const nextButton = document.querySelector('.testimonial-next');
     const slides = track.querySelectorAll('.testimonial-slide');
     let currentSlide = 0;
     let autoInterval;
@@ -506,28 +511,45 @@
     function goToSlide(index) {
       currentSlide = index;
       track.style.transform = 'translateX(-' + currentSlide * 100 + '%)';
-      dots.forEach(function (dot, i) {
-        dot.classList.toggle('active', i === currentSlide);
-      });
     }
 
     function nextSlide() {
+      if (slides.length === 0) return;
       goToSlide((currentSlide + 1) % slides.length);
     }
 
-    dots.forEach(function (dot, index) {
-      dot.addEventListener('click', function () {
-        clearInterval(autoInterval);
-        goToSlide(index);
+    function startAutoSlide() {
+      if (slides.length > 1) {
         autoInterval = setInterval(nextSlide, CONFIG.testimonialInterval);
-      });
-    });
+        track._testimonialAutoInterval = autoInterval;
+      }
+    }
+
+    if (previousButton) {
+      previousButton.onclick = function () {
+        if (slides.length === 0) return;
+        clearInterval(autoInterval);
+        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        startAutoSlide();
+      };
+    }
+
+    if (nextButton) {
+      nextButton.onclick = function () {
+        if (slides.length === 0) return;
+        clearInterval(autoInterval);
+        nextSlide();
+        startAutoSlide();
+      };
+    }
 
     if (slides.length > 1) {
       goToSlide(0);
-      autoInterval = setInterval(nextSlide, CONFIG.testimonialInterval);
+      startAutoSlide();
     }
   }
+
+  window.refreshTestimonialsSlider = initTestimonialsSlider;
 
   /* ==========================================
      FAQ ACCORDION
