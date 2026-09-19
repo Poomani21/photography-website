@@ -364,6 +364,12 @@ h1, h2, h3, h4, h5, h6 {
   gap: 32px;
 }
 
+/* Testimonials remain available on the home page but are intentionally hidden from site navigation. */
+.nav-menu a[href="index.html#testimonials"],
+.nav-overlay a[href="index.html#testimonials"] {
+  display: none;
+}
+
 .nav-link {
   font-size: 0.85rem;
   font-weight: 400;
@@ -500,6 +506,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
 }
+
 
 .hero-overlay {
   position: absolute;
@@ -1416,6 +1423,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
 }
+
 
 .page-hero-overlay {
   position: absolute;
