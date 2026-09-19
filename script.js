@@ -12,8 +12,8 @@
      Update these values for your business
      ========================================== */
   const CONFIG = {
-    whatsappNumber: '919940281156',
-    email: 'info@rjevents.org',
+    whatsappNumber: '918056621821',
+    email: 'rjphotographyvideo@gmail.com',
     typingWords: ['Moments', 'Memories', 'Magic', 'Stories'],
     heroSlideInterval: 5000,
     testimonialInterval: 5000,
@@ -732,7 +732,11 @@
   });
 
   document.querySelectorAll('.float-email').forEach(function (btn) {
-    btn.href = 'mailto:' + CONFIG.email;
+    if (CONFIG.email) {
+      btn.href = 'mailto:' + CONFIG.email;
+    } else {
+      btn.style.display = 'none';
+    }
   });
 
 })();
