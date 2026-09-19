@@ -20,6 +20,10 @@
     loaderDuration: 2500
   };
 
+  window.RJPhotographyContact = {
+    whatsappNumber: CONFIG.whatsappNumber
+  };
+
   /* ==========================================
      DOM READY
      ========================================== */
@@ -578,7 +582,7 @@
      BOOKING FORM - WhatsApp Redirect
      ========================================== */
   function initBookingForm() {
-    const forms = document.querySelectorAll('.booking-form-element');
+    const forms = document.querySelectorAll('.booking-form-element:not([data-emailjs-contact-form])');
     forms.forEach(function (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();

@@ -1729,6 +1729,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
 }
 
+.contact-form-status {
+  min-height: 24px;
+  margin: 4px 0 10px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.contact-form-status a {
+  color: var(--color-primary);
+}
+
+.contact-form-status-error {
+  color: #e27b7b;
+}
+
 /* ---------- Contact Page ---------- */
 .page-hero {
   height: 50vh;

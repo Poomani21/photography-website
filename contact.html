@@ -92,7 +92,7 @@
         </div>
 
         <div class="reveal slide-right">
-          <form class="booking-form booking-form-element">
+          <form class="booking-form booking-form-element" data-emailjs-contact-form>
             <h3 style="margin-bottom: 24px; text-align: center;">Send Us a Message</h3>
             <div class="form-row">
               <div class="form-group">
@@ -138,8 +138,9 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Tell us about your event..."></textarea>
             </div>
+            <p class="contact-form-status" data-contact-form-status role="status" aria-live="polite"></p>
             <button type="submit" class="btn btn-primary form-submit">
-              <i class="fab fa-whatsapp"></i> Send via WhatsApp
+              <i class="fas fa-paper-plane"></i> Send Enquiry
             </button>
           </form>
         </div>
@@ -207,6 +208,8 @@
   <a href="#" class="float-btn float-whatsapp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" class="float-btn float-email"><i class="fas fa-envelope"></i></a>
   <button class="float-btn back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
+  <script src="contact-email.js"></script>
 </body>
 </html>
