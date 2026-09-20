@@ -1811,11 +1811,11 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
 }
 
-.page-hero-overlay {
+/* .page-hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(11, 11, 11, 0.7);
-}
+} */
 
 .page-hero-content {
   position: relative;
@@ -1834,11 +1834,13 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: flex-start;
   gap: 8px;
   font-size: 0.85rem;
-  color: var(--color-muted);
+  /* color: var(--color-muted); */
+  color: #f5f5f5;
 }
 
 .breadcrumb a {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  color: #e8b719;
 }
 
 .contact-grid {
