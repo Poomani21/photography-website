@@ -1713,6 +1713,118 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
 }
 
+[data-emailjs-contact-form] .form-group input[data-custom-event-date],
+.modal-overlay .booking-form-element .form-group input[data-custom-event-date] {
+  cursor: pointer;
+  pointer-events: auto;
+  padding-right: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='17' rx='2'/%3E%3Cpath d='M8 2v4M16 2v4M3 10h18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+}
+
+.rj-date-picker {
+  position: fixed;
+  z-index: 10002;
+  width: min(330px, calc(100vw - 24px));
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  color: var(--color-white);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+
+.rj-date-picker.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.rj-date-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.rj-date-picker-title {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rj-date-picker-control,
+.rj-date-picker-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  font: inherit;
+}
+
+.rj-date-picker-control {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: var(--color-primary);
+  transition: var(--transition-fast);
+}
+
+.rj-date-picker-control:hover,
+.rj-date-picker-control:focus-visible {
+  background: var(--color-primary);
+  color: var(--bg-primary);
+}
+
+.rj-date-picker-weekdays,
+.rj-date-picker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.rj-date-picker-weekdays {
+  margin-bottom: 6px;
+  color: var(--color-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.rj-date-picker-day {
+  aspect-ratio: 1;
+  min-height: 34px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  transition: var(--transition-fast);
+}
+
+.rj-date-picker-day:hover,
+.rj-date-picker-day:focus-visible,
+.rj-date-picker-day.is-today {
+  border-color: rgba(212, 175, 55, 0.65);
+  color: var(--color-primary);
+}
+
+.rj-date-picker-day.is-selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
@@ -1914,9 +2026,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: minmax(200px, 1.35fr) minmax(130px, 0.85fr) minmax(250px, 1.5fr) minmax(220px, 1.3fr);
+  gap: 32px;
   margin-bottom: 60px;
+}
+
+.footer-grid > div:nth-child(3) {
+  min-width: 0;
+}
+
+.footer-grid > div:nth-child(3) .footer-links a {
+  white-space: nowrap;
 }
 
 .footer-brand p {
@@ -1946,18 +2066,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-links li {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 12px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: flex-start;
+  min-width: 0;
   color: var(--color-muted);
   font-size: 0.9rem;
+  line-height: 1.5;
   transition: var(--transition-fast);
 }
 
 .footer-links a:hover {
   color: var(--color-primary);
   padding-left: 5px;
+}
+
+.footer-link-icon {
+  flex: 0 0 16px;
+  width: 16px;
+  margin: 0.28em 8px 0 0;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1;
 }
 
 .footer-social {
@@ -1979,6 +2118,17 @@ h1, h2, h3, h4, h5, h6 {
 .footer-bottom p {
   color: var(--color-muted);
   font-size: 0.85rem;
+}
+
+.footer-brand-inline {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 0.98em;
+  white-space: nowrap;
+}
+
+.footer-brand-inline span {
+  color: var(--color-white);
 }
 
 /* ---------- Floating Buttons ---------- */
@@ -2319,6 +2469,10 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-50%);
   }
 
+  .footer-links li {
+    justify-content: center;
+  }
+
   .footer-social {
     justify-content: center;
   }
@@ -2412,6 +2566,12 @@ h1, h2, h3, h4, h5, h6 {
 
   .modal-content {
     padding: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-grid > div:nth-child(3) .footer-links a {
+    white-space: normal;
   }
 }
 

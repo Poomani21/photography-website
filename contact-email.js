@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  const SERVICE_ID = 'service_0s4fxtx';
-  const TEMPLATE_ID = 'template_ivmzmx6';
-  const PUBLIC_KEY = 'kUJCJ6MbD5EeGeudQ';
   const form = document.querySelector('[data-emailjs-contact-form]');
 
   if (!form) return;
@@ -37,7 +34,7 @@
       return;
     }
 
-    if (!window.emailjs) {
+    if (!window.RJPhotographyEmailJS) {
       showStatus('Unable to send your enquiry. Please try again or contact us via WhatsApp.', true);
       console.error('EmailJS failed to load.');
       return;
@@ -69,7 +66,7 @@
     showStatus('', false);
 
     try {
-      await window.emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, { publicKey: PUBLIC_KEY });
+      await window.RJPhotographyEmailJS.send(templateParams);
 
       const whatsappNumber = window.RJPhotographyContact && window.RJPhotographyContact.whatsappNumber;
       const whatsappMessage = [

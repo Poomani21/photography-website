@@ -24,6 +24,21 @@
     whatsappNumber: CONFIG.whatsappNumber
   };
 
+  window.RJPhotographyEmailJS = {
+    send: function (templateParams) {
+      if (!window.emailjs) {
+        return Promise.reject(new Error('EmailJS failed to load.'));
+      }
+
+      return window.emailjs.send(
+        'service_0s4fxtx',
+        'template_ivmzmx6',
+        templateParams,
+        { publicKey: 'kUJCJ6MbD5EeGeudQ' }
+      );
+    }
+  };
+
   /* ==========================================
      DOM READY
      ========================================== */
@@ -47,6 +62,8 @@
     initFAQAccordion();
     initBookingForm();
     initBookingModal();
+    initEventDatePickers();
+    initFooterIcons();
     initButtonRipple();
     initSmoothScroll();
     initParallax();
@@ -586,40 +603,351 @@
     forms.forEach(function (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (form.closest('.modal-overlay')) {
+          handleModalBookingSubmit(form);
+          return;
+        }
+
         handleBookingSubmit(form);
       });
     });
   }
 
-  function handleBookingSubmit(form) {
-    const name = form.querySelector('[name="name"]')?.value || '';
-    const phone = form.querySelector('[name="phone"]')?.value || '';
-    const email = form.querySelector('[name="email"]')?.value || '';
-    const eventType = form.querySelector('[name="event_type"]')?.value || '';
-    const eventDate = form.querySelector('[name="event_date"]')?.value || '';
-    const location = form.querySelector('[name="location"]')?.value || '';
-    const message = form.querySelector('[name="message"]')?.value || '';
+  function getBookingFormData(form) {
+    return {
+      name: form.querySelector('[name="name"]')?.value.trim() || '',
+      phone: form.querySelector('[name="phone"]')?.value.trim() || '',
+      email: form.querySelector('[name="email"]')?.value.trim() || '',
+      eventType: form.querySelector('[name="event_type"]')?.value || '',
+      eventDate: form.querySelector('[name="event_date"]')?.value || '',
+      location: form.querySelector('[name="location"]')?.value.trim() || '',
+      message: form.querySelector('[name="message"]')?.value.trim() || ''
+    };
+  }
 
-    if (!name || !phone) {
-      alert('Please fill in your Name and Phone number.');
-      return;
-    }
-
-    const whatsappMessage =
+  function createBookingWhatsAppMessage(formData) {
+    return (
       'Hello,\n' +
       'New Booking Request\n\n' +
-      'Name: ' + name + '\n' +
-      'Phone: ' + phone + '\n' +
-      'Email: ' + email + '\n' +
-      'Event: ' + eventType + '\n' +
-      'Date: ' + eventDate + '\n' +
-      'Location: ' + location + '\n' +
-      'Message: ' + message;
+      'Name: ' + formData.name + '\n' +
+      'Phone: ' + formData.phone + '\n' +
+      'Email: ' + formData.email + '\n' +
+      'Event: ' + formData.eventType + '\n' +
+      'Date: ' + formData.eventDate + '\n' +
+      'Location: ' + formData.location + '\n' +
+      'Message: ' + formData.message
+    );
+  }
+
+  function hasRequiredBookingDetails(formData) {
+    if (formData.name && formData.phone) return true;
+
+    alert('Please fill in your Name and Phone number.');
+    return false;
+  }
+
+  function handleBookingSubmit(form) {
+    const formData = getBookingFormData(form);
+
+    if (!hasRequiredBookingDetails(formData)) return;
+
+    const whatsappMessage = createBookingWhatsAppMessage(formData);
 
     const whatsappURL = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(whatsappMessage);
     window.open(whatsappURL, '_blank');
 
     form.reset();
+  }
+
+  async function handleModalBookingSubmit(form) {
+    const formData = getBookingFormData(form);
+    if (!hasRequiredBookingDetails(formData)) return;
+
+    const submitButton = form.querySelector('[type="submit"]');
+    const defaultButtonMarkup = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    try {
+      await window.RJPhotographyEmailJS.send({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        event_type: formData.eventType,
+        event_date: formData.eventDate,
+        location: formData.location,
+        message: formData.message
+      });
+
+      const whatsappMessage = createBookingWhatsAppMessage(formData);
+      const whatsappURL = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(whatsappMessage);
+      form.reset();
+      window.open(whatsappURL, '_blank', 'noopener');
+    } catch (error) {
+      console.error('EmailJS booking submission error:', error);
+      alert('Unable to send your booking enquiry. Please try again or contact us via WhatsApp.');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = defaultButtonMarkup;
+    }
+  }
+
+  /* ==========================================
+     EVENT DATE PICKERS
+     ========================================== */
+  function initEventDatePickers() {
+    const dateInputs = document.querySelectorAll(
+      '[data-emailjs-contact-form] input[data-custom-event-date][name="event_date"], ' +
+      '.modal-overlay .booking-form-element input[data-custom-event-date][name="event_date"]'
+    );
+    if (!dateInputs.length) return;
+
+    const monthFormatter = new Intl.DateTimeFormat('en-IN', { month: 'long', year: 'numeric' });
+    const weekdayLabels = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    let activeInput = null;
+    let displayedDate = new Date();
+    let picker = null;
+
+    function parseDate(value) {
+      if (!value) return null;
+
+      const parts = value.split('-').map(Number);
+      if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+
+      return new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function isSameDate(firstDate, secondDate) {
+      return firstDate && secondDate &&
+        firstDate.getFullYear() === secondDate.getFullYear() &&
+        firstDate.getMonth() === secondDate.getMonth() &&
+        firstDate.getDate() === secondDate.getDate();
+    }
+
+    function createControl(label, icon, onClick) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'rj-date-picker-control';
+      button.setAttribute('aria-label', label);
+      button.innerHTML = icon;
+      button.addEventListener('click', onClick);
+      return button;
+    }
+
+    function renderPicker() {
+      if (!picker || !activeInput) return;
+
+      const selectedDate = parseDate(activeInput.value);
+      const today = new Date();
+      const year = displayedDate.getFullYear();
+      const month = displayedDate.getMonth();
+      const firstWeekday = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      picker.replaceChildren();
+
+      const header = document.createElement('div');
+      header.className = 'rj-date-picker-header';
+      header.append(
+        createControl('Previous month', '<i class="fas fa-chevron-left"></i>', function () {
+          displayedDate = new Date(year, month - 1, 1);
+          renderPicker();
+        })
+      );
+
+      const title = document.createElement('strong');
+      title.className = 'rj-date-picker-title';
+      title.textContent = monthFormatter.format(displayedDate);
+      header.append(title);
+      header.append(
+        createControl('Next month', '<i class="fas fa-chevron-right"></i>', function () {
+          displayedDate = new Date(year, month + 1, 1);
+          renderPicker();
+        })
+      );
+      picker.append(header);
+
+      const weekdays = document.createElement('div');
+      weekdays.className = 'rj-date-picker-weekdays';
+      weekdayLabels.forEach(function (label) {
+        const weekday = document.createElement('span');
+        weekday.textContent = label;
+        weekdays.append(weekday);
+      });
+      picker.append(weekdays);
+
+      const days = document.createElement('div');
+      days.className = 'rj-date-picker-days';
+      for (let index = 0; index < firstWeekday; index += 1) {
+        const blank = document.createElement('span');
+        blank.setAttribute('aria-hidden', 'true');
+        days.append(blank);
+      }
+
+      for (let day = 1; day <= daysInMonth; day += 1) {
+        const date = new Date(year, month, day);
+        const dayButton = document.createElement('button');
+        dayButton.type = 'button';
+        dayButton.className = 'rj-date-picker-day';
+        dayButton.textContent = String(day);
+        dayButton.setAttribute('aria-label', date.toLocaleDateString('en-IN', {
+          day: 'numeric', month: 'long', year: 'numeric'
+        }));
+
+        if (isSameDate(date, selectedDate)) dayButton.classList.add('is-selected');
+        if (isSameDate(date, today)) dayButton.classList.add('is-today');
+
+        dayButton.addEventListener('click', function () {
+          activeInput.value = formatDate(date);
+          activeInput.dispatchEvent(new Event('input', { bubbles: true }));
+          activeInput.dispatchEvent(new Event('change', { bubbles: true }));
+          closePicker();
+        });
+        days.append(dayButton);
+      }
+      picker.append(days);
+    }
+
+    function positionPicker() {
+      if (!picker || !activeInput) return;
+
+      const inputBounds = activeInput.getBoundingClientRect();
+      const padding = 12;
+      const pickerWidth = picker.offsetWidth;
+      const pickerHeight = picker.offsetHeight;
+      const left = Math.min(Math.max(padding, inputBounds.left), window.innerWidth - pickerWidth - padding);
+      let top = inputBounds.bottom + 8;
+
+      if (top + pickerHeight > window.innerHeight - padding) {
+        top = Math.max(padding, inputBounds.top - pickerHeight - 8);
+      }
+
+      picker.style.left = left + 'px';
+      picker.style.top = top + 'px';
+    }
+
+    function closePicker() {
+      if (!picker) return;
+
+      picker.classList.remove('is-visible');
+      if (activeInput) activeInput.setAttribute('aria-expanded', 'false');
+      activeInput = null;
+    }
+
+    function openPicker(input) {
+      activeInput = input;
+      displayedDate = parseDate(input.value) || new Date();
+
+      if (!picker) {
+        picker = document.createElement('div');
+        picker.className = 'rj-date-picker';
+        picker.setAttribute('role', 'dialog');
+        picker.setAttribute('aria-label', 'Choose event date');
+        document.body.append(picker);
+      }
+
+      input.setAttribute('aria-expanded', 'true');
+      renderPicker();
+      picker.classList.add('is-visible');
+      positionPicker();
+    }
+
+    dateInputs.forEach(function (input) {
+      input.setAttribute('aria-haspopup', 'dialog');
+      input.setAttribute('aria-expanded', 'false');
+      input.addEventListener('pointerdown', function (event) {
+        event.preventDefault();
+        try {
+          input.focus({ preventScroll: true });
+        } catch (error) {
+          input.focus();
+        }
+        openPicker(input);
+      });
+      input.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ' && event.key !== 'ArrowDown') return;
+
+        event.preventDefault();
+        openPicker(input);
+      });
+    });
+
+    document.addEventListener('pointerdown', function (event) {
+      if (!picker || !picker.classList.contains('is-visible')) return;
+      if (picker.contains(event.target) || (activeInput && activeInput.contains(event.target))) return;
+      closePicker();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closePicker();
+    });
+
+    window.addEventListener('resize', function () {
+      if (picker && picker.classList.contains('is-visible')) positionPicker();
+    });
+  }
+
+  /* ==========================================
+     FOOTER ICONS
+     ========================================== */
+  function initFooterIcons() {
+    function getQuickLinkIcon(href) {
+      if (href.includes('index.html')) return 'fa-house';
+      if (href.includes('about.html')) return 'fa-circle-info';
+      if (href.includes('portfolio.html') || href.includes('gallery.html')) return 'fa-images';
+      if (href.includes('pricing.html')) return 'fa-tags';
+      if (href.includes('reviews.html')) return 'fa-star';
+      if (href.includes('contact.html')) return 'fa-address-card';
+      return 'fa-link';
+    }
+
+    function getServiceIcon(text) {
+      if (text.includes('commercial')) return 'fa-box-open';
+      if (text.includes('videography')) return 'fa-video';
+      if (text.includes('corporate')) return 'fa-briefcase';
+      if (text.includes('portrait') || text.includes('fashion') || text.includes('baby')) return 'fa-camera';
+      if (text.includes('pre') || text.includes('post')) return 'fa-heart';
+      if (text.includes('wedding')) return 'fa-gem';
+      return 'fa-camera';
+    }
+
+    document.querySelectorAll('footer .footer-links').forEach(function (list) {
+      const title = list.parentElement.querySelector('.footer-title');
+      const section = title ? title.textContent.trim().toLowerCase() : '';
+
+      list.querySelectorAll('li').forEach(function (item) {
+        if (item.querySelector('.footer-link-icon')) return;
+
+        const link = item.querySelector('a');
+        const href = link ? link.getAttribute('href') || '' : '';
+        const text = (link || item).textContent.trim().toLowerCase();
+        let iconName = '';
+
+        if (section.includes('quick')) {
+          iconName = getQuickLinkIcon(href);
+        } else if (section.includes('service')) {
+          iconName = getServiceIcon(text);
+        } else if (section.includes('contact')) {
+          if (href.startsWith('tel:')) iconName = 'fa-phone';
+          else if (href.startsWith('mailto:')) iconName = 'fa-envelope';
+          else iconName = 'fa-location-dot';
+        }
+
+        if (!iconName) return;
+
+        const icon = document.createElement('i');
+        icon.className = 'fas ' + iconName + ' footer-link-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        (link || item).prepend(icon);
+      });
+    });
   }
 
   /* ==========================================

@@ -179,12 +179,12 @@
           <ul class="footer-links">
             <li><a href="tel:+918056621821">080566 21821</a></li>
             <li><a href="mailto:rjphotographyvideo@gmail.com">rjphotographyvideo@gmail.com</a></li>
-            <li>130/40, Maruthamalai Main Road, Vadavalli, Coimbatore, India</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=130%2F40%2C%20Maruthamalai%20Main%20Road%2C%20Vadavalli%2C%20Coimbatore%2C%20India" target="_blank" rel="noopener noreferrer">130/40, Maruthamalai Main Road, Vadavalli, Coimbatore, India</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 RJ Photography. All Rights Reserved.</p>
+        <p>&copy; 2026 <span class="footer-brand-inline">RJ<span>Photography</span></span>. All Rights Reserved.</p>
         <p>Crafted with passion for visual storytelling</p>
       </div>
     </div>
@@ -198,8 +198,8 @@
         <div class="form-group"><label for="modal_name">Full Name *</label><input type="text" id="modal_name" name="name" required></div>
         <div class="form-group"><label for="modal_phone">Phone *</label><input type="tel" id="modal_phone" name="phone" required></div>
         <div class="form-group"><label for="modal_email">Email</label><input type="email" id="modal_email" name="email"></div>
-        <div class="form-group"><label for="modal_event_type">Event Type</label><select id="modal_event_type" name="event_type"><option value="">Select</option><option value="Wedding">Wedding</option><option value="Pre Wedding">Pre Wedding</option><option value="Other">Other</option></select></div>
-        <div class="form-group"><label for="modal_event_date">Event Date</label><input type="date" id="modal_event_date" name="event_date"></div>
+        <div class="form-group"><label for="modal_event_type">Event Type</label><select id="modal_event_type" name="event_type"><option value="">Select Event Type</option><option value="Wedding">Wedding Photography</option><option value="Pre Wedding">Pre &amp; Post-Wedding Photography</option><option value="Birthday">Birthday Photography</option><option value="Baby Shoot">Baby Photography</option><option value="Maternity">Maternity Photography</option><option value="Portrait">Portrait Photography</option><option value="Corporate">Corporate Events</option><option value="Commercial">Commercial / Product Photography</option><option value="Videography">Wedding &amp; Event Videography</option><option value="Other">Other</option></select></div>
+        <div class="form-group"><label for="modal_event_date">Event Date</label><input type="text" id="modal_event_date" name="event_date" data-custom-event-date placeholder="Select event date" readonly></div>
         <div class="form-group"><label for="modal_location">Location</label><input type="text" id="modal_location" name="location"></div>
         <div class="form-group"><label for="modal_message">Message</label><textarea id="modal_message" name="message"></textarea></div>
         <button type="submit" class="btn btn-primary form-submit"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
@@ -210,6 +210,7 @@
   <a href="#" class="float-btn float-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="#" class="float-btn float-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
   <button class="float-btn back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
